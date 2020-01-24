@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.12)
+project(gicp)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+find_package(Eigen3 REQUIRED VERSION 3.3.7)
+find_package(fmt)
+add_executable(gicp main.cpp)
+
+# target_include_directories(gicp PUBLIC "${Eigen3_INCLUDE_DIRS}")
+# include_directories(gicp "${Eigen3_INCLUDE_DIRS}")
+target_link_libraries(gicp Eigen3::Eigen fmt::fmt)
